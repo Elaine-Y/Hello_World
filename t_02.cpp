@@ -5,15 +5,15 @@
 using namespace std;
 
 int CountNum(int n, int m) {
-  if(m==0 && n>=0){
+  if(m==0 && n>=0){ 
     return 1;
   }else if(n<0){
     return 0;
   }
 
   if (m >= n) {
-    return CountNum(n - 1, m - n) + CountNum(n - 1, m);
-  } else {
+    return CountNum(n - 1, m - n) + CountNum(n - 1, m); //第n个数一起相加+不含第n个数（根据背包问题的状态转换方程）
+  } else {  
     return CountNum(n-1,m);  
   }
 }
